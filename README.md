@@ -15,14 +15,14 @@ Clone this repository and while in the root directory run the following commands
 
 - POST `/register`:
 
-Endpoint to register a new user. Send a json body with name, email, and password.
-Example curl: 
+Endpoint to register a new user. Send a json body with name, username, and password.
+Example curl:
 ```bash
 curl --location --request POST 'localhost:8000/register' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "Ravi",
-    "email": "abc@xyz.com",
+    "username": "abc",
     "password": "testpass"
 }'
 ```
@@ -36,14 +36,14 @@ Example curl:
 curl --location --request POST 'localhost:8000/login' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "email": "abc@xyz.com",
+    "username": "abc",
     "password": "testpass"
 }'
 ```
 
 - POST `/logout`:
 
-Endpoint to logout from the current session. 
+Endpoint to logout from the current session.
 Pass the Bearer token recieved from `/register` or `/login` endpoints.
 
 Example curl:
@@ -54,7 +54,7 @@ curl --location --request POST 'localhost:8000/logout' \
 
 - POST `/logoutAll`:
 
-Endpoint to logout from all sessions. 
+Endpoint to logout from all sessions.
 Pass the Bearer token recieved from `/register` or `/login` endpoints.
 
 Example curl:
