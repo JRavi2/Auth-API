@@ -1,6 +1,6 @@
-# Auth API
+# Realtime Feed App
 
-This is a simple authentication REST API.
+This is a simple realtime feed app with authentication, made using socket.io.
 
 ## How to Run
 

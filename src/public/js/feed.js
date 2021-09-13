@@ -34,13 +34,13 @@ const addPostToDOM = (post) => {
   div.innerHTML = `
         <p>
 	  <span hidden>${post._id}</span>
-          <bold>${post.username}</bold>
-          <bold>Timestamp:</bold> ${post.createdAt}
-	  ${post.createdAt !== post.updatedAt ? "<span>(edited)</span>" : ""}
-	  ${post.username === localStorage.getItem("username") ? '<a class="edit_link" href="">Edit</a>' : ""}
+	  <span class="username">${post.username}</span>
 	  ${post.username === localStorage.getItem("username") ? '<a class="delete_link" href="">Delete</a>' : ""}
+	  ${post.username === localStorage.getItem("username") ? '<a class="edit_link" href="">Edit</a>' : ""}
         </p>
 	<p class="body">${post.body}</p>
+	<span><b>Timestamp:</b> ${post.createdAt}</span>
+	${post.createdAt !== post.updatedAt ? "<span><b>Edited:</b> " + post.updatedAt + "</span>" : ""}
 	<br><br>`;
 
   const edit_link = div.getElementsByClassName("edit_link")[0];
